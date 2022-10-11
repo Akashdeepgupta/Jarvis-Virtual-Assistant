@@ -80,6 +80,33 @@ if __name__ == "__main__":
             webbrowser.open("youtube.com")
         elif "open google" in query:
             webbrowser.open("google.com")
+        
+        elif "the time" in query:
+            strTime = datetime.datetime.now().strftime("%H:%M:%S")
+            print(strTime)
+            speak(f"Sir the time is {strTime}")
+        
+        elif "but why" in query:
+            speak("Because there is some issue which i am unable to trace i will learn that")
+            exit()
+
+        elif "open vs code" in query:
+            speak("opening vs code")
+            codePath = "C:\\Users\\Akashdeep Gupta\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+            os.startfile(codePath.replace("\\", "\\\\"))
+            speak("vs code is opened")
+        elif any(map(lambda x:x in query,["mail","email","mail to","send email","send mail","send a mail","send an email"])):
+            try:
+                speak("What should i say")
+                content = takeCommand()
+                to = "akashdeepg2001@gmail.com"
+                sendEmail(to, content)
+                speak("Email has been sent")
+            except Exception as e:
+                print(e)
+                speak("Sorry i'm not able to sent the email at the moment")
+        elif any(map(lambda x:x in query,["quit","exit","stop","bye","go","go to hell"])):
+            exit()
        
         elif "play music" in query:
             music_dir = "C:\\Users\\Akashdeep Gupta\\Music\\Musify\\Download"  # give the location of folder where your song is located
