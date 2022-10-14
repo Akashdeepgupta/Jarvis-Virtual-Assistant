@@ -89,7 +89,17 @@ if __name__ == "__main__":
         elif "but why" in query:
             speak("Because there is some issue which i am unable to trace i will learn that")
             exit()
-
+            
+        elif "open facebook" in query:
+            webbrowser.open("facebook.com")
+        elif "open stackoverflow" in query:
+            webbrowser.open("stackoverflow.com")
+        elif "open facebook" in query:
+            webbrowser.open("facebook.com")
+        elif "open github" in query:
+            webbrowser.open("github.com")
+        elif "open instagram" in query: 
+            webbrowser.open("instagram.com")
         elif "open vs code" in query:
             speak("opening vs code")
             codePath = "C:\\Users\\Akashdeep Gupta\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
