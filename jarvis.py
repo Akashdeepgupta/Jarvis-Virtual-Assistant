@@ -107,6 +107,14 @@ if __name__ == "__main__":
                 speak("Sorry i'm not able to sent the email at the moment")
         elif any(map(lambda x:x in query,["quit","exit","stop","bye","go","go to hell"])):
             exit()
+
+        elif any(map(lambda x:x in query,["photo","open photos","images","open images","show me photos","show me images"])):
+            photo_dir = "C:\\Users\\Akashdeep Gupta\\Music\\Musify\\Download" # give the location of folder where your photos is located
+            photos = os.listdir(photo_dir)
+            print(photos)
+            speak("sir Playing music as you said")
+            os.startfile(os.path.join(photo_dir, photos[0]))
+            exit()
        
         elif "play music" in query:
             music_dir = "C:\\Users\\Akashdeep Gupta\\Music\\Musify\\Download"  # give the location of folder where your song is located
